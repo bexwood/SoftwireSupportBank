@@ -16,7 +16,6 @@ log4js.configure({
     }
 });
 
-
 logger.debug("Launched.");
 
 //const data = fs.readFileSync('./Transactions2014.csv', 'UTF-8');
@@ -33,8 +32,8 @@ lines.forEach((line) => {
         firstLine = false
     } else {
         let details = line.split(',')
-        if (! moment(details[0], 'DD/MM/YYYY', true).isValid()){
-            logger.debug('Incorrect date format found- transaction skipped:',line)
+        if (! moment(details[0], 'DD/MM/YYYY', true).isValid()) {
+            logger.debug('Incorrect date format found- transaction skipped:', line)
         } else {
             let newTransaction = new Transaction(transactionID, line);
             transactions.push(newTransaction)
