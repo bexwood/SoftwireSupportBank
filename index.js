@@ -34,6 +34,8 @@ lines.forEach((line) => {
         let details = line.split(',')
         if (! moment(details[0], 'DD/MM/YYYY', true).isValid()) {
             logger.debug('Incorrect date format found- transaction skipped:', line)
+        } else if (isNaN(parseFloat(details[4]))){
+            logger.debug('Incorrect price format found- transaction skipped:', line)
         } else {
             let newTransaction = new Transaction(transactionID, line);
             transactions.push(newTransaction)
