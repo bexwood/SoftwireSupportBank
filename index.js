@@ -25,7 +25,7 @@ class Transaction {
 class BankAccount {
     constructor(Name, Balance){
         this.Name = Name;
-        this.Balance = Balance;
+        this.Balance = parseFloat(Balance);
     }
 }
 
@@ -56,5 +56,12 @@ let accounts = []
 people.forEach((person)=>{
     let newAccount = new BankAccount(person, 0.00)
     accounts.push(newAccount)
+})
+
+transactions.forEach((transaction)=>{
+    let sender = accounts.find(element => element.Name === transaction.From);
+    let reciever = accounts.find(element => element.Name === transaction.To);
+    sender.Balance -= transaction.Amount;
+    reciever.Balance += transaction.Amount;
 })
 
