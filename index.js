@@ -34,16 +34,17 @@ lines.forEach((line) => {
     } else {
         let details = line.split(',')
         if (! moment(details[0], 'DD/MM/YYYY', true).isValid()){
-            logger.debug('Incorrect date format found- line skipped:',line)
-        }
-        let newTransaction = new Transaction(transactionID, line);
-        transactions.push(newTransaction)
-        transactionID += 1;
-        if (!people.includes(newTransaction.To)) {
-            people.push(newTransaction.To)
-        }
-        if (!people.includes(newTransaction.From)) {
-            people.push(newTransaction.From)
+            logger.debug('Incorrect date format found- transaction skipped:',line)
+        } else {
+            let newTransaction = new Transaction(transactionID, line);
+            transactions.push(newTransaction)
+            transactionID += 1;
+            if (!people.includes(newTransaction.To)) {
+                people.push(newTransaction.To)
+            }
+            if (!people.includes(newTransaction.From)) {
+                people.push(newTransaction.From)
+            }
         }
     }
 });
