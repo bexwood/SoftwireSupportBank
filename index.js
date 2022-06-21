@@ -1,6 +1,7 @@
 import { parse } from 'csv-parse';
 import * as fs from 'fs';
 import moment from 'moment';
+import * as readlineSync from 'readline-sync';
 
 //var parser = parse({columns: true}, function(err, records){
     //console.log(records)
@@ -14,7 +15,7 @@ class Transaction {
     constructor(ID, transDetails) {
         this.ID = ID;
         let details = transDetails.split(',')
-        this.Date = moment(details[0]).format("DD/MM/YYYY");
+        this.Date = details[0];
         this.From = details[1];
         this.To = details[2];
         this.Narrative = details[3];
@@ -65,3 +66,22 @@ transactions.forEach((transaction)=>{
     reciever.Balance += transaction.Amount;
 })
 
+var request = readlineSync.question('Please enter a name or \'All\' ')
+if (request === 'All'){
+    accounts.forEach((account) =>{
+        if (account.Balance <=0){
+            console.log(account.Name, 'is owed', Math.abs(account.Balance));
+        } else {
+            console.log(account.Name, 'owes', Math.abs(account.Balance));
+        }
+    });
+} else if (people.includes(request)) {
+    let account = accounts.find(obj => obj.Name === request)
+    if (account.Balance <=0){
+        console.log(account.Name, 'is owed', Math.abs(account.Balance));
+    } else {
+        console.log(account.Name, 'owes', Math.abs(account.Balance));
+    }
+} else {
+    console.log('User not found!')
+}
