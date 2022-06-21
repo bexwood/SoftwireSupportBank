@@ -1,15 +1,6 @@
-import { parse } from 'csv-parse';
 import * as fs from 'fs';
 import moment from 'moment';
 import * as readlineSync from 'readline-sync';
-
-//var parser = parse({columns: true}, function(err, records){
-    //console.log(records)
-//});
-//fs.createReadStream('./Transactions2014.csv').pipe(parser);
-//let fileContents = fs.readFile('./Transactions2014.csv', 'utf8', (err, data)=>{
-    //console.log(data);
-//});
 
 class Transaction {
     constructor(ID, transDetails) {
@@ -76,12 +67,11 @@ if (request === 'All'){
         }
     });
 } else if (people.includes(request)) {
-    let account = accounts.find(obj => obj.Name === request)
-    if (account.Balance <=0){
-        console.log(account.Name, 'is owed', Math.abs(account.Balance));
-    } else {
-        console.log(account.Name, 'owes', Math.abs(account.Balance));
-    }
+    transactions.forEach((transaction) =>{
+        if (transaction.To === request || transaction.From === request) {
+            console.log(transaction)
+        }
+    })
 } else {
     console.log('User not found!')
 }
