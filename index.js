@@ -6,7 +6,7 @@ class Transaction {
     constructor(ID, transDetails) {
         this.ID = ID;
         let details = transDetails.split(',')
-        this.Date = details[0];
+        this.Date = moment(details[0], 'DD/MM/YYYY').format('DD/MM/YYYY');
         this.From = details[1];
         this.To = details[2];
         this.Narrative = details[3];
@@ -18,6 +18,15 @@ class BankAccount {
     constructor(Name, Balance){
         this.Name = Name;
         this.Balance = parseFloat(Balance);
+    }
+
+    //methods
+    addToBalance(amount) {
+        this.Balance += amount
+    }
+
+    takeFromBalance(amount) {
+        this.Balance -= amount
     }
 }
 
@@ -53,17 +62,17 @@ people.forEach((person)=>{
 transactions.forEach((transaction)=>{
     let sender = accounts.find(element => element.Name === transaction.From);
     let reciever = accounts.find(element => element.Name === transaction.To);
-    sender.Balance -= transaction.Amount;
-    reciever.Balance += transaction.Amount;
+    sender.takeFromBalance(transaction.Amount)
+    reciever.addToBalance(transaction.Amount)
 })
 
-var request = readlineSync.question('Please enter a name or \'All\' ')
+let request = readlineSync.question('Please enter a name or \'All\' ')
 if (request === 'All'){
     accounts.forEach((account) =>{
         if (account.Balance <=0){
-            console.log(account.Name, 'is owed', Math.abs(account.Balance));
+            console.log(account.Name, 'is owed', Math.abs(account.Balance.toFixed(2)));
         } else {
-            console.log(account.Name, 'owes', Math.abs(account.Balance));
+            console.log(account.Name, 'owes', Math.abs(account.Balance.toFixed(2)));
         }
     });
 } else if (people.includes(request)) {
