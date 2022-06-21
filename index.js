@@ -22,50 +22,52 @@ logger.debug("Launched.");
 const data = fs.readFileSync('./DodgyTransactions2015.csv','UTF-8');
 const lines = data.split(/\r?\n/);
 
-let transactions = []
-let people = []
-let transactionID = 0
-let firstLine = true
+let transactions = [];
+let people = [];
+let transactionID = 0;
+let firstLine = true;
 
 lines.forEach((line) => {
     if (firstLine){
-        firstLine = false
+        firstLine = false;
     } else {
-        let details = line.split(',')
+        let details = line.split(',');
         if (! moment(details[0], 'DD/MM/YYYY', true).isValid()) {
-            logger.debug('Incorrect date format found- transaction skipped:', line)
+            logger.debug('Incorrect date format found- transaction skipped:', line);
+            console.log('Please note: transaction skipped due to error');
         } else if (isNaN(parseFloat(details[4]))){
-            logger.debug('Incorrect price format found- transaction skipped:', line)
+            logger.debug('Incorrect price format found- transaction skipped:', line);
+            console.log('Please note: transaction skipped due to error');
         } else {
             let newTransaction = new Transaction(transactionID, line);
-            transactions.push(newTransaction)
+            transactions.push(newTransaction);
             transactionID += 1;
             if (!people.includes(newTransaction.To)) {
-                people.push(newTransaction.To)
+                people.push(newTransaction.To);
             }
             if (!people.includes(newTransaction.From)) {
-                people.push(newTransaction.From)
+                people.push(newTransaction.From);
             }
         }
     }
 });
 
-let accounts = []
+let accounts = [];
 people.forEach((person)=>{
-    let newAccount = new BankAccount(person, 0.00)
-    accounts.push(newAccount)
+    let newAccount = new BankAccount(person, 0.00);
+    accounts.push(newAccount);
 })
 
 transactions.forEach((transaction)=>{
     let sender = accounts.find(element => element.Name === transaction.From);
     let reciever = accounts.find(element => element.Name === transaction.To);
-    sender.takeFromBalance(transaction.Amount)
-    reciever.addToBalance(transaction.Amount)
+    sender.takeFromBalance(transaction.Amount);
+    reciever.addToBalance(transaction.Amount);
 })
 
-let request = readlineSync.question('Please enter a name or \'All\' ')
+let request = readlineSync.question('Please enter a name or \'All\' ');
 if (request === 'All'){
-    logger.info('All user data was requested')
+    logger.info('All user data was requested');
     accounts.forEach((account) =>{
         if (account.Balance <=0){
             console.log(account.Name, 'is owed', Math.abs(account.Balance.toFixed(2)));
@@ -74,15 +76,15 @@ if (request === 'All'){
         }
     });
 } else if (people.includes(request)) {
-    logger.info('Known user was entered:',request)
+    logger.info('Known user was entered:',request);
     transactions.forEach((transaction) =>{
         if (transaction.To === request || transaction.From === request) {
-            console.log(transaction)
+            console.log(transaction);
         }
     })
 } else {
-    console.log('User not found!')
-    logger.info('Unknown User was entered')
+    console.log('User not found!');
+    logger.info('Unknown User was entered');
 }
 
-logger.debug("Terminated.")
+logger.debug("Terminated.");
