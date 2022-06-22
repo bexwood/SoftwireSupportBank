@@ -19,7 +19,6 @@ log4js.configure({
 
 logger.debug("Launched.");
 
-let transactions = [];
 let accounts = [];
 let transactionID = 0;
 
@@ -35,7 +34,6 @@ try {
             let transDate = moment(record['Date']).format('DD/MM/YYYY')
             let transAmount = parseFloat(record['Amount'])
             let newTransaction = new Transaction(transactionID, transDate, record['FromAccount'], record['ToAccount'], record['Narrative'], transAmount);
-            transactions.push(newTransaction);
             if (typeof accounts.find(element => element.Name === newTransaction.To) === "undefined"){
                 let newAccount = new BankAccount(newTransaction.To, 0.00);
                 accounts.push(newAccount);
@@ -44,7 +42,10 @@ try {
                 let newAccount = new BankAccount(newTransaction.From, 0.00);
                 accounts.push(newAccount);
             }
-            newTransaction.updateAccountBalance(accounts);
+            let sender = accounts.find(element => element.Name === newTransaction.From);
+            let receiver = accounts.find(element => element.Name === newTransaction.To);
+            sender.performTransaction(newTransaction);
+            receiver.performTransaction(newTransaction);
             transactionID += 1;
         })
     } else if (extension === 'csv') {
@@ -64,7 +65,6 @@ try {
                     let transDate = moment(details[0], 'DD/MM/YYYY').format('DD/MM/YYYY')
                     let transAmount = parseFloat(details[4])
                     let newTransaction = new Transaction(transactionID, transDate, details[1], details[2], details[3], transAmount);
-                    transactions.push(newTransaction);
                     if (typeof accounts.find(element => element.Name === newTransaction.To) === "undefined") {
                         let newAccount = new BankAccount(newTransaction.To, 0.00);
                         accounts.push(newAccount);
@@ -73,7 +73,10 @@ try {
                         let newAccount = new BankAccount(newTransaction.From, 0.00);
                         accounts.push(newAccount);
                     }
-                    newTransaction.updateAccountBalance(accounts);
+                    let sender = accounts.find(element => element.Name === newTransaction.From);
+                    let receiver = accounts.find(element => element.Name === newTransaction.To);
+                    sender.performTransaction(newTransaction);
+                    receiver.performTransaction(newTransaction);
                     transactionID += 1;
                 }
             }
@@ -92,11 +95,8 @@ try {
         });
     } else if (typeof accounts.find(element => element.Name === request) !== "undefined") {
         logger.info('Known user was entered:',request);
-        transactions.forEach((transaction) =>{
-            if (transaction.To === request || transaction.From === request) {
-                console.log(transaction);
-            }
-        })
+        let account = accounts.find(element => element.Name === request)
+        console.log(account.Transactions)
     } else {
         console.log('User not found!');
         logger.info('Unknown User was entered');

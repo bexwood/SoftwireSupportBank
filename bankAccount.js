@@ -1,7 +1,19 @@
+import Transaction from "./transaction.js";
+
 export default class BankAccount {
     constructor(Name, Balance){
         this.Name = Name;
         this.Balance = parseFloat(Balance);
+        this.Transactions = []
+    }
+
+    performTransaction(transaction){
+        this.Transactions.push(transaction)
+        if (transaction.To === this.Name){
+            this.addToBalance(transaction.Amount)
+        } else if (transaction.From === this.Name){
+            this.takeFromBalance(transaction.Amount)
+        }
     }
 
     addToBalance(amount) {
