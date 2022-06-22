@@ -288,29 +288,6 @@
 [2022-06-22T13:54:16.677] [DEBUG] index.js - Unknown file was entered
 [2022-06-22T14:00:40.692] [DEBUG] index.js - Launched.
 [2022-06-22T14:01:01.899] [DEBUG] index.js - Launched.
-[2022-06-22T14:20:59.418] [DEBUG] index.js - Launched.
-[2022-06-22T14:25:55.757] [DEBUG] index.js - Launched.
-[2022-06-22T14:26:04.309] [INFO] index.js - All user data was requested
-[2022-06-22T14:26:04.317] [DEBUG] index.js - Terminated.
-[2022-06-22T14:26:26.422] [DEBUG] index.js - Launched.
-[2022-06-22T14:27:05.213] [DEBUG] index.js - Launched.
-[2022-06-22T14:27:19.869] [INFO] index.js - All user data was requested
-[2022-06-22T14:27:19.871] [DEBUG] index.js - Terminated.
-[2022-06-22T14:31:18.200] [DEBUG] index.js - Launched.
-[2022-06-22T14:31:27.541] [INFO] index.js - All user data was requested
-[2022-06-22T14:31:27.549] [DEBUG] index.js - Terminated.
-[2022-06-22T14:31:30.374] [DEBUG] index.js - Launched.
-[2022-06-22T14:31:39.323] [INFO] index.js - Known user was entered: Dan W
-[2022-06-22T14:31:39.343] [DEBUG] index.js - Terminated.
-[2022-06-22T14:34:03.400] [DEBUG] index.js - Launched.
-[2022-06-22T14:34:23.360] [INFO] index.js - All user data was requested
-[2022-06-22T14:34:23.368] [DEBUG] index.js - Terminated.
-[2022-06-22T14:35:01.276] [DEBUG] index.js - Launched.
-[2022-06-22T14:35:09.448] [INFO] index.js - All user data was requested
-[2022-06-22T14:35:09.455] [DEBUG] index.js - Terminated.
-[2022-06-22T14:52:06.275] [DEBUG] index.js - Launched.
-[2022-06-22T14:52:11.824] [DEBUG] index.js - Unknown file was entered
-[2022-06-22T14:53:06.751] [DEBUG] index.js - Launched.
-[2022-06-22T14:53:37.215] [DEBUG] index.js - Launched.
-[2022-06-22T14:53:45.220] [INFO] index.js - All user data was requested
-[2022-06-22T14:53:45.228] [DEBUG] index.js - Terminated.
+[2022-06-22T16:21:22.448] [DEBUG] index.js - Launched.
+[2022-06-22T16:21:31.302] [INFO] index.js - All user data was requested
+[2022-06-22T16:21:31.306] [DEBUG] index.js - Terminated.

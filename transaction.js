@@ -11,7 +11,7 @@ export default class Transaction {
     updateAccountBalance(accounts){
         let sender = accounts.find(element => element.Name === this.From);
         let receiver = accounts.find(element => element.Name === this.To);
-        sender.addTransaction(this);
-        receiver.addTransaction(this);
+        sender.takeFromBalance(this.Amount);
+        receiver.addToBalance(this.Amount);
     }
 }

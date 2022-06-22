@@ -5,7 +5,6 @@ import BankAccount from './bankAccount.js';
 import moment from 'moment';
 import log4js from 'log4js';
 import XML from 'xml';
-import accountManager from "./manageAccounts.js";
 
 const logger = log4js.getLogger('index.js');
 
@@ -21,8 +20,7 @@ log4js.configure({
 logger.debug("Launched.");
 
 let transactions = [];
-const accounts1 = new accountManager();
-let accounts = []
+let accounts = [];
 let transactionID = 0;
 
 let file = readlineSync.question('Please enter the file name which you would like to use (with the extension) ');
@@ -38,9 +36,15 @@ try {
             let transAmount = parseFloat(record['Amount'])
             let newTransaction = new Transaction(transactionID, transDate, record['FromAccount'], record['ToAccount'], record['Narrative'], transAmount);
             transactions.push(newTransaction);
-            accounts1.updateAccount(newTransaction.To, newTransaction);
-            accounts1.updateAccount(newTransaction.From, newTransaction)
-            //newTransaction.updateAccountBalance(accounts);
+            if (typeof accounts.find(element => element.Name === newTransaction.To) === "undefined"){
+                let newAccount = new BankAccount(newTransaction.To, 0.00);
+                accounts.push(newAccount);
+            }
+            if (typeof accounts.find(element => element.Name === newTransaction.From) === "undefined"){
+                let newAccount = new BankAccount(newTransaction.From, 0.00);
+                accounts.push(newAccount);
+            }
+            newTransaction.updateAccountBalance(accounts);
             transactionID += 1;
         })
     } else if (extension === 'csv') {
@@ -88,8 +92,11 @@ try {
         });
     } else if (typeof accounts.find(element => element.Name === request) !== "undefined") {
         logger.info('Known user was entered:',request);
-        let account = accounts.find(element => element.Name === request)
-        console.log(account.getTransactions());
+        transactions.forEach((transaction) =>{
+            if (transaction.To === request || transaction.From === request) {
+                console.log(transaction);
+            }
+        })
     } else {
         console.log('User not found!');
         logger.info('Unknown User was entered');
