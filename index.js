@@ -18,9 +18,10 @@ log4js.configure({
 
 logger.debug("Launched.");
 
-const data = fs.readFileSync('./Transactions2014.csv', 'UTF-8');
+const data2014 = fs.readFileSync('./Transactions2014.csv', 'UTF-8');
 const data2015 = fs.readFileSync('./DodgyTransactions2015.csv','UTF-8');
-const lines = data.split(/\r?\n/);
+const allData = data2014 + '\n' + data2015
+const lines = allData.split(/\r?\n/);
 
 let transactions = [];
 let accounts = [];
@@ -28,8 +29,8 @@ let transactionID = 0;
 let firstLine = true;
 
 lines.forEach((line) => {
-    if (firstLine){
-        firstLine = false;
+    if (line.substring(0,4)==='Date'){
+        return;
     } else {
         let details = line.split(',');
         if (! moment(details[0], 'DD/MM/YYYY', true).isValid()) {
@@ -39,7 +40,7 @@ lines.forEach((line) => {
             logger.debug('Incorrect price format found- transaction skipped:', line);
             console.log('Please note: transaction skipped due to error');
         } else {
-            let transDate = moment(details[0], 'DD/MM/YYYY').format('DD/MM/YYYY')
+            let transDate = moment(details[0], 'DD/MM/YYYY')
             let transAmount = parseFloat(details[4])
             let newTransaction = new Transaction(transactionID, transDate, details[1], details[2], details[3], transAmount);
             transactions.push(newTransaction);
@@ -67,7 +68,7 @@ if (request === 'All'){
             console.log(account.Name, 'owes', Math.abs(account.Balance.toFixed(2)));
         }
     });
-} else if (typeof accounts.find(element => element.Name === request) === "undefined") {
+} else if (typeof accounts.find(element => element.Name === request) !== "undefined") {
     logger.info('Known user was entered:',request);
     transactions.forEach((transaction) =>{
         if (transaction.To === request || transaction.From === request) {
