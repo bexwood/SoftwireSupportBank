@@ -147,3 +147,105 @@
 [2022-06-22T10:48:16.371] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
 [2022-06-22T10:48:18.615] [INFO] index.js - All user data was requested
 [2022-06-22T10:48:18.621] [DEBUG] index.js - Terminated.
+[2022-06-22T10:56:11.112] [DEBUG] index.js - Launched.
+[2022-06-22T10:56:11.121] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T10:56:11.126] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T10:56:30.188] [DEBUG] index.js - Launched.
+[2022-06-22T10:56:30.196] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T10:56:30.200] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T10:56:43.130] [DEBUG] index.js - Launched.
+[2022-06-22T10:56:43.156] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T10:56:43.164] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T10:56:59.416] [DEBUG] index.js - Launched.
+[2022-06-22T10:56:59.449] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T10:56:59.461] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T10:57:07.625] [DEBUG] index.js - Launched.
+[2022-06-22T10:57:07.634] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T10:57:07.638] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T10:57:16.535] [DEBUG] index.js - Launched.
+[2022-06-22T10:57:16.543] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T10:57:16.547] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T10:58:28.811] [INFO] index.js - All user data was requested
+[2022-06-22T10:58:28.816] [DEBUG] index.js - Terminated.
+[2022-06-22T11:01:45.350] [DEBUG] index.js - Launched.
+[2022-06-22T11:01:45.361] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T11:01:45.365] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T11:02:24.033] [DEBUG] index.js - Launched.
+[2022-06-22T11:02:24.042] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T11:02:24.047] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T11:02:26.220] [INFO] index.js - All user data was requested
+[2022-06-22T11:02:26.226] [DEBUG] index.js - Terminated.
+[2022-06-22T11:03:55.412] [DEBUG] index.js - Launched.
+[2022-06-22T11:03:55.422] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T11:03:55.427] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T11:06:37.276] [DEBUG] index.js - Launched.
+[2022-06-22T11:06:37.285] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T11:06:37.289] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T11:07:02.346] [DEBUG] index.js - Launched.
+[2022-06-22T11:07:02.382] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T11:07:02.395] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T11:07:21.568] [DEBUG] index.js - Launched.
+[2022-06-22T11:07:21.607] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T11:07:21.625] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T11:08:50.389] [DEBUG] index.js - Launched.
+[2022-06-22T11:08:50.398] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T11:08:50.403] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T11:11:05.719] [DEBUG] index.js - Launched.
+[2022-06-22T11:11:05.728] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T11:11:05.733] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T11:11:20.591] [DEBUG] index.js - Launched.
+[2022-06-22T11:11:20.600] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T11:11:20.604] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T11:11:56.199] [DEBUG] index.js - Launched.
+[2022-06-22T11:11:56.208] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T11:11:56.211] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T11:12:19.113] [DEBUG] index.js - Launched.
+[2022-06-22T11:12:19.121] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T11:12:19.125] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T11:12:28.592] [DEBUG] index.js - Launched.
+[2022-06-22T11:12:28.633] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T11:12:28.646] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T11:13:05.024] [DEBUG] index.js - Launched.
+[2022-06-22T11:13:05.034] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T11:13:05.039] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T11:13:17.821] [DEBUG] index.js - Launched.
+[2022-06-22T11:13:17.830] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T11:13:17.834] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T11:15:38.849] [DEBUG] index.js - Launched.
+[2022-06-22T11:15:38.860] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T11:15:38.868] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T11:21:53.304] [DEBUG] index.js - Launched.
+[2022-06-22T11:21:53.314] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T11:21:53.317] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T11:21:59.848] [DEBUG] index.js - Launched.
+[2022-06-22T11:21:59.859] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T11:21:59.862] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T11:22:46.600] [DEBUG] index.js - Launched.
+[2022-06-22T11:22:46.645] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T11:22:46.656] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T11:23:01.184] [DEBUG] index.js - Launched.
+[2022-06-22T11:23:01.195] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T11:23:01.199] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T11:23:03.199] [INFO] index.js - All user data was requested
+[2022-06-22T11:23:03.205] [DEBUG] index.js - Terminated.
+[2022-06-22T11:23:19.407] [DEBUG] index.js - Launched.
+[2022-06-22T11:23:19.416] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T11:23:19.420] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T11:23:51.850] [DEBUG] index.js - Launched.
+[2022-06-22T11:23:51.859] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T11:23:51.863] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T11:25:33.931] [DEBUG] index.js - Launched.
+[2022-06-22T11:25:33.940] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T11:25:33.945] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T11:25:36.243] [INFO] index.js - All user data was requested
+[2022-06-22T11:25:36.249] [DEBUG] index.js - Terminated.
+[2022-06-22T11:26:53.800] [DEBUG] index.js - Launched.
+[2022-06-22T11:26:53.838] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T11:26:53.852] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T11:26:58.128] [INFO] index.js - Known user was entered: Todd
+[2022-06-22T11:26:58.195] [DEBUG] index.js - Terminated.
+[2022-06-22T11:27:29.203] [DEBUG] index.js - Launched.
+[2022-06-22T11:27:29.213] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T11:27:29.217] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T11:27:31.340] [INFO] index.js - Known user was entered: Todd
+[2022-06-22T11:27:31.426] [DEBUG] index.js - Terminated.

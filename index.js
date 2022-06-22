@@ -1,8 +1,8 @@
 import * as fs from 'fs';
-import moment from 'moment';
 import * as readlineSync from 'readline-sync';
 import Transaction from './transaction.js';
 import BankAccount from './bankAccount.js';
+import moment from 'moment';
 import log4js from 'log4js';
 
 const logger = log4js.getLogger('index.js');
@@ -18,15 +18,14 @@ log4js.configure({
 
 logger.debug("Launched.");
 
-const data2014 = fs.readFileSync('./Transactions2014.csv', 'UTF-8');
-const data2015 = fs.readFileSync('./DodgyTransactions2015.csv','UTF-8');
-const data1415 = data2014 + '\n' + data2015
-const records1415 = data1415.split(/\r?\n/);
-
 let transactions = [];
 let accounts = [];
 let transactionID = 0;
 
+const data2014 = fs.readFileSync('./Transactions2014.csv', 'UTF-8');
+const data2015 = fs.readFileSync('./DodgyTransactions2015.csv','UTF-8');
+const data1415 = data2014 + '\n' + data2015
+const records1415 = data1415.split(/\r?\n/);
 records1415.forEach((record) => {
     if (record.substring(0,4)==='Date'){
         return;
@@ -39,7 +38,7 @@ records1415.forEach((record) => {
             logger.debug('Incorrect price format found- transaction skipped:', record);
             console.log('Please note: transaction skipped due to error');
         } else {
-            let transDate = moment(details[0], 'DD/MM/YYYY')
+            let transDate = moment(details[0], 'DD/MM/YYYY').format('DD/MM/YYYY')
             let transAmount = parseFloat(details[4])
             let newTransaction = new Transaction(transactionID, transDate, details[1], details[2], details[3], transAmount);
             transactions.push(newTransaction);
@@ -56,6 +55,25 @@ records1415.forEach((record) => {
         }
     }
 });
+
+const data2013 = fs.readFileSync('./Transactions2013.json', 'UTF-8');
+let records13 = JSON.parse(data2013);
+records13.forEach((record)=>{
+    let transDate = moment(record['Date']).format('DD/MM/YYYY')
+    let transAmount = parseFloat(record['Amount'])
+    let newTransaction = new Transaction(transactionID, transDate, record['FromAccount'], record['ToAccount'], record['Narrative'], transAmount);
+    transactions.push(newTransaction);
+    if (typeof accounts.find(element => element.Name === newTransaction.To) === "undefined"){
+        let newAccount = new BankAccount(newTransaction.To, 0.00);
+        accounts.push(newAccount);
+    }
+    if (typeof accounts.find(element => element.Name === newTransaction.From) === "undefined"){
+        let newAccount = new BankAccount(newTransaction.From, 0.00);
+        accounts.push(newAccount);
+    }
+    newTransaction.updateAccountBalance(accounts);
+    transactionID += 1;
+})
 
 let request = readlineSync.question('Please enter a name or \'All\' ');
 if (request === 'All'){
