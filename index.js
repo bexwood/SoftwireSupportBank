@@ -20,24 +20,23 @@ logger.debug("Launched.");
 
 const data2014 = fs.readFileSync('./Transactions2014.csv', 'UTF-8');
 const data2015 = fs.readFileSync('./DodgyTransactions2015.csv','UTF-8');
-const allData = data2014 + '\n' + data2015
-const lines = allData.split(/\r?\n/);
+const data1415 = data2014 + '\n' + data2015
+const records1415 = data1415.split(/\r?\n/);
 
 let transactions = [];
 let accounts = [];
 let transactionID = 0;
-let firstLine = true;
 
-lines.forEach((line) => {
-    if (line.substring(0,4)==='Date'){
+records1415.forEach((record) => {
+    if (record.substring(0,4)==='Date'){
         return;
     } else {
-        let details = line.split(',');
+        let details = record.split(',');
         if (! moment(details[0], 'DD/MM/YYYY', true).isValid()) {
-            logger.debug('Incorrect date format found- transaction skipped:', line);
+            logger.debug('Incorrect date format found- transaction skipped:', record);
             console.log('Please note: transaction skipped due to error');
         } else if (isNaN(parseFloat(details[4]))){
-            logger.debug('Incorrect price format found- transaction skipped:', line);
+            logger.debug('Incorrect price format found- transaction skipped:', record);
             console.log('Please note: transaction skipped due to error');
         } else {
             let transDate = moment(details[0], 'DD/MM/YYYY')

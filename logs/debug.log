@@ -123,3 +123,13 @@
 [2022-06-22T10:40:05.312] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
 [2022-06-22T10:40:07.370] [INFO] index.js - Known user was entered: Dan W
 [2022-06-22T10:40:07.421] [DEBUG] index.js - Terminated.
+[2022-06-22T10:44:02.557] [DEBUG] index.js - Launched.
+[2022-06-22T10:44:02.579] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T10:44:02.589] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T10:44:04.585] [INFO] index.js - Unknown User was entered
+[2022-06-22T10:44:04.586] [DEBUG] index.js - Terminated.
+[2022-06-22T10:44:06.942] [DEBUG] index.js - Launched.
+[2022-06-22T10:44:06.950] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T10:44:06.954] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T10:44:09.508] [INFO] index.js - All user data was requested
+[2022-06-22T10:44:09.514] [DEBUG] index.js - Terminated.
