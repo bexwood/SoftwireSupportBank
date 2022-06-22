@@ -249,3 +249,32 @@
 [2022-06-22T11:27:29.217] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
 [2022-06-22T11:27:31.340] [INFO] index.js - Known user was entered: Todd
 [2022-06-22T11:27:31.426] [DEBUG] index.js - Terminated.
+[2022-06-22T12:15:07.565] [DEBUG] index.js - Launched.
+[2022-06-22T12:15:07.574] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T12:15:07.578] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T12:19:19.430] [DEBUG] index.js - Launched.
+[2022-06-22T12:19:29.294] [INFO] index.js - All user data was requested
+[2022-06-22T12:19:29.302] [DEBUG] index.js - Terminated.
+[2022-06-22T12:19:34.845] [DEBUG] index.js - Launched.
+[2022-06-22T12:19:45.547] [INFO] index.js - All user data was requested
+[2022-06-22T12:19:45.555] [DEBUG] index.js - Terminated.
+[2022-06-22T12:19:48.637] [DEBUG] index.js - Launched.
+[2022-06-22T12:19:56.952] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T12:19:56.956] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T12:19:59.290] [INFO] index.js - All user data was requested
+[2022-06-22T12:19:59.297] [DEBUG] index.js - Terminated.
+[2022-06-22T12:20:02.225] [DEBUG] index.js - Launched.
+[2022-06-22T12:20:49.431] [DEBUG] index.js - Launched.
+[2022-06-22T12:20:53.986] [INFO] index.js - All user data was requested
+[2022-06-22T12:20:53.987] [DEBUG] index.js - Terminated.
+[2022-06-22T12:22:04.996] [DEBUG] index.js - Launched.
+[2022-06-22T12:22:51.426] [DEBUG] index.js - Launched.
+[2022-06-22T12:22:52.822] [DEBUG] index.js - Unknown file entered, aborting program
+[2022-06-22T12:22:55.435] [DEBUG] index.js - Launched.
+[2022-06-22T12:23:04.074] [DEBUG] index.js - Unknown file entered, aborting program
+[2022-06-22T12:23:06.664] [DEBUG] index.js - Launched.
+[2022-06-22T12:24:43.891] [DEBUG] index.js - Launched.
+[2022-06-22T12:24:46.036] [DEBUG] index.js - Unknown file was entered
+[2022-06-22T12:24:48.467] [DEBUG] index.js - Launched.
+[2022-06-22T12:24:57.793] [INFO] index.js - All user data was requested
+[2022-06-22T12:24:57.802] [DEBUG] index.js - Terminated.
