@@ -5,6 +5,7 @@ import BankAccount from './bankAccount.js';
 import moment from 'moment';
 import log4js from 'log4js';
 import XML from 'xml';
+import accountManager from "./accountManager.js";
 
 const logger = log4js.getLogger('index.js');
 
@@ -19,13 +20,15 @@ log4js.configure({
 
 logger.debug("Launched.");
 
-let accounts = [];
+//let accounts = [];
+const accounts = new accountManager()
 let transactionID = 0;
 
 let file = readlineSync.question('Please enter the file name which you would like to use (with the extension) ');
 let pathToFile = './'+file;
 let splitFile = file.split('.')
 let extension = splitFile.pop()
+
 try {
     const data = fs.readFileSync(pathToFile,'UTF-8');
     if (extension === 'json') {
@@ -34,18 +37,7 @@ try {
             let transDate = moment(record['Date']).format('DD/MM/YYYY')
             let transAmount = parseFloat(record['Amount'])
             let newTransaction = new Transaction(transactionID, transDate, record['FromAccount'], record['ToAccount'], record['Narrative'], transAmount);
-            if (typeof accounts.find(element => element.Name === newTransaction.To) === "undefined"){
-                let newAccount = new BankAccount(newTransaction.To, 0.00);
-                accounts.push(newAccount);
-            }
-            if (typeof accounts.find(element => element.Name === newTransaction.From) === "undefined"){
-                let newAccount = new BankAccount(newTransaction.From, 0.00);
-                accounts.push(newAccount);
-            }
-            let sender = accounts.find(element => element.Name === newTransaction.From);
-            let receiver = accounts.find(element => element.Name === newTransaction.To);
-            sender.performTransaction(newTransaction);
-            receiver.performTransaction(newTransaction);
+            accounts.executeTransaction(newTransaction)
             transactionID += 1;
         })
     } else if (extension === 'csv') {
@@ -65,18 +57,7 @@ try {
                     let transDate = moment(details[0], 'DD/MM/YYYY').format('DD/MM/YYYY')
                     let transAmount = parseFloat(details[4])
                     let newTransaction = new Transaction(transactionID, transDate, details[1], details[2], details[3], transAmount);
-                    if (typeof accounts.find(element => element.Name === newTransaction.To) === "undefined") {
-                        let newAccount = new BankAccount(newTransaction.To, 0.00);
-                        accounts.push(newAccount);
-                    }
-                    if (typeof accounts.find(element => element.Name === newTransaction.From) === "undefined") {
-                        let newAccount = new BankAccount(newTransaction.From, 0.00);
-                        accounts.push(newAccount);
-                    }
-                    let sender = accounts.find(element => element.Name === newTransaction.From);
-                    let receiver = accounts.find(element => element.Name === newTransaction.To);
-                    sender.performTransaction(newTransaction);
-                    receiver.performTransaction(newTransaction);
+                    accounts.executeTransaction(newTransaction)
                     transactionID += 1;
                 }
             }
@@ -90,12 +71,10 @@ try {
     let request = readlineSync.question('Please enter a name or \'All\' ');
     if (request === 'All'){
         logger.info('All user data was requested');
-        accounts.forEach((account) =>{
-            account.getBalance();
-        });
-    } else if (typeof accounts.find(element => element.Name === request) !== "undefined") {
+        accounts.checkAll()
+    } else if (accounts.checkForAccount(request)) {
         logger.info('Known user was entered:',request);
-        let account = accounts.find(element => element.Name === request)
+        let account = accounts.findAccount(request)
         console.log(account.Transactions)
     } else {
         console.log('User not found!');

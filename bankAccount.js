@@ -1,5 +1,3 @@
-import Transaction from "./transaction.js";
-
 export default class BankAccount {
     constructor(Name, Balance){
         this.Name = Name;
@@ -7,7 +5,7 @@ export default class BankAccount {
         this.Transactions = []
     }
 
-    performTransaction(transaction){
+    addTransaction(transaction){
         this.Transactions.push(transaction)
         if (transaction.To === this.Name){
             this.addToBalance(transaction.Amount)
