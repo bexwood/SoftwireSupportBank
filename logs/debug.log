@@ -377,3 +377,6 @@
 [2022-06-22T17:12:19.492] [DEBUG] index.js - Launched.
 [2022-06-22T17:12:28.044] [INFO] index.js - Unknown User was entered
 [2022-06-22T17:12:28.044] [DEBUG] index.js - Terminated.
+[2022-06-22T17:14:37.359] [DEBUG] index.js - Launched.
+[2022-06-22T17:14:55.667] [INFO] index.js - All user data was requested
+[2022-06-22T17:14:55.676] [DEBUG] index.js - Terminated.

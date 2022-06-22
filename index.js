@@ -1,10 +1,8 @@
 import * as fs from 'fs';
 import * as readlineSync from 'readline-sync';
 import Transaction from './transaction.js';
-import BankAccount from './bankAccount.js';
 import moment from 'moment';
 import log4js from 'log4js';
-import XML from 'xml';
 import accountManager from "./accountManager.js";
 
 const logger = log4js.getLogger('index.js');
@@ -20,7 +18,6 @@ log4js.configure({
 
 logger.debug("Launched.");
 
-//let accounts = [];
 const accounts = new accountManager()
 let transactionID = 0;
 
@@ -81,10 +78,9 @@ try {
         logger.info('Unknown User was entered');
     }
 } catch {
-    console.log('Cannot find the file which you provided.');
-    logger.debug('Unknown file was entered');
+    console.log('Some error occurred');
+    logger.debug('An error has occurred');
     process.exit();
 }
-
 
 logger.debug("Terminated.");
