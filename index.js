@@ -61,11 +61,7 @@ let request = readlineSync.question('Please enter a name or \'All\' ');
 if (request === 'All'){
     logger.info('All user data was requested');
     accounts.forEach((account) =>{
-        if (account.Balance <=0){
-            console.log(account.Name, 'is owed', Math.abs(account.Balance.toFixed(2)));
-        } else {
-            console.log(account.Name, 'owes', Math.abs(account.Balance.toFixed(2)));
-        }
+        account.getBalance();
     });
 } else if (typeof accounts.find(element => element.Name === request) !== "undefined") {
     logger.info('Known user was entered:',request);

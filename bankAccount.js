@@ -11,4 +11,12 @@ export default class BankAccount {
     takeFromBalance(amount) {
         this.Balance -= amount
     }
+
+    getBalance(){
+        if (this.Balance <=0){
+            console.log(this.Name, 'is owed', Math.abs(this.Balance.toFixed(2)));
+        } else {
+            console.log(this.Name, 'owes', Math.abs(this.Balance.toFixed(2)));
+        }
+    }
 }
