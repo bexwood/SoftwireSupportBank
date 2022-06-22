@@ -17,3 +17,27 @@
 [2022-06-21T17:23:42.269] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
 [2022-06-21T17:23:44.742] [INFO] index.js - All user data was requested
 [2022-06-21T17:23:44.749] [DEBUG] index.js - Terminated.
+[2022-06-22T09:12:17.087] [DEBUG] index.js - Launched.
+[2022-06-22T09:12:17.093] [DEBUG] index.js - Incorrect price format found- transaction skipped: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+[2022-06-22T09:12:17.095] [DEBUG] index.js - Incorrect date format found- transaction skipped: Last Thursday,Sarah T,Dan W,Beers,5.42
+[2022-06-22T09:12:22.102] [INFO] index.js - All user data was requested
+[2022-06-22T09:12:22.110] [DEBUG] index.js - Terminated.
+[2022-06-22T09:14:23.752] [DEBUG] index.js - Launched.
+[2022-06-22T09:14:26.466] [INFO] index.js - All user data was requested
+[2022-06-22T09:14:26.475] [DEBUG] index.js - Terminated.
+[2022-06-22T09:23:48.182] [DEBUG] index.js - Launched.
+[2022-06-22T09:23:50.681] [INFO] index.js - All user data was requested
+[2022-06-22T09:23:50.689] [DEBUG] index.js - Terminated.
+[2022-06-22T09:24:07.638] [DEBUG] index.js - Launched.
+[2022-06-22T09:24:10.182] [INFO] index.js - All user data was requested
+[2022-06-22T09:24:10.190] [DEBUG] index.js - Terminated.
+[2022-06-22T09:24:26.700] [DEBUG] index.js - Launched.
+[2022-06-22T09:24:28.568] [INFO] index.js - All user data was requested
+[2022-06-22T09:24:28.573] [DEBUG] index.js - Terminated.
+[2022-06-22T09:26:19.687] [DEBUG] index.js - Launched.
+[2022-06-22T09:26:46.349] [DEBUG] index.js - Launched.
+[2022-06-22T09:26:48.168] [INFO] index.js - All user data was requested
+[2022-06-22T09:26:48.174] [DEBUG] index.js - Terminated.
+[2022-06-22T09:26:58.236] [DEBUG] index.js - Launched.
+[2022-06-22T09:27:00.350] [INFO] index.js - All user data was requested
+[2022-06-22T09:27:00.358] [DEBUG] index.js - Terminated.

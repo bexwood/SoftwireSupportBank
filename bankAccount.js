@@ -4,7 +4,6 @@ export default class BankAccount {
         this.Balance = parseFloat(Balance);
     }
 
-    //methods
     addToBalance(amount) {
         this.Balance += amount
     }
