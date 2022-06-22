@@ -43,7 +43,6 @@ lines.forEach((line) => {
             let transAmount = parseFloat(details[4])
             let newTransaction = new Transaction(transactionID, transDate, details[1], details[2], details[3], transAmount);
             transactions.push(newTransaction);
-            transactionID += 1;
             if (typeof accounts.find(element => element.Name === newTransaction.To) === "undefined"){
                 let newAccount = new BankAccount(newTransaction.To, 0.00);
                 accounts.push(newAccount);
@@ -52,16 +51,11 @@ lines.forEach((line) => {
                 let newAccount = new BankAccount(newTransaction.From, 0.00);
                 accounts.push(newAccount);
             }
+            newTransaction.updateAccountBalance(accounts);
+            transactionID += 1;
         }
     }
 });
-
-transactions.forEach((transaction)=>{
-    let sender = accounts.find(element => element.Name === transaction.From);
-    let receiver = accounts.find(element => element.Name === transaction.To);
-    sender.takeFromBalance(transaction.Amount);
-    receiver.addToBalance(transaction.Amount);
-})
 
 let request = readlineSync.question('Please enter a name or \'All\' ');
 if (request === 'All'){

@@ -8,4 +8,11 @@ export default class Transaction {
         this.Narrative = Narrative;
         this.Amount = Amount;
     }
+
+    updateAccountBalance(accounts){
+        let sender = accounts.find(element => element.Name === this.From);
+        let receiver = accounts.find(element => element.Name === this.To);
+        sender.takeFromBalance(this.Amount);
+        receiver.addToBalance(this.Amount);
+    }
 }

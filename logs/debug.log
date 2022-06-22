@@ -44,3 +44,12 @@
 [2022-06-22T09:29:46.350] [DEBUG] index.js - Launched.
 [2022-06-22T09:29:48.501] [INFO] index.js - Unknown User was entered
 [2022-06-22T09:29:48.502] [DEBUG] index.js - Terminated.
+[2022-06-22T09:55:44.802] [DEBUG] index.js - Launched.
+[2022-06-22T09:55:46.827] [INFO] index.js - Known user was entered: A;;
+[2022-06-22T09:55:46.828] [DEBUG] index.js - Terminated.
+[2022-06-22T09:55:51.533] [DEBUG] index.js - Launched.
+[2022-06-22T09:55:54.276] [INFO] index.js - All user data was requested
+[2022-06-22T09:55:54.282] [DEBUG] index.js - Terminated.
+[2022-06-22T09:56:18.513] [DEBUG] index.js - Launched.
+[2022-06-22T09:56:20.400] [INFO] index.js - All user data was requested
+[2022-06-22T09:56:20.407] [DEBUG] index.js - Terminated.
