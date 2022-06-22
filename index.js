@@ -73,7 +73,7 @@ if (request === 'All'){
             console.log(account.Name, 'owes', Math.abs(account.Balance.toFixed(2)));
         }
     });
-} else if (people.includes(request)) {
+} else if (typeof accounts.find(element => element.Name === request) === "undefined") {
     logger.info('Known user was entered:',request);
     transactions.forEach((transaction) =>{
         if (transaction.To === request || transaction.From === request) {
