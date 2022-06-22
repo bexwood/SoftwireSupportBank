@@ -4,6 +4,7 @@ import Transaction from './transaction.js';
 import BankAccount from './bankAccount.js';
 import moment from 'moment';
 import log4js from 'log4js';
+import XML from 'xml';
 
 const logger = log4js.getLogger('index.js');
 
@@ -46,17 +47,17 @@ try {
             newTransaction.updateAccountBalance(accounts);
             transactionID += 1;
         })
-    } else if (extension === 'csv'){
+    } else if (extension === 'csv') {
         const records = data.split(/\r?\n/);
         records.forEach((record) => {
-            if (record.substring(0,4)==='Date'){
+            if (record.substring(0, 4) === 'Date') {
                 return;
             } else {
                 let details = record.split(',');
-                if (! moment(details[0], 'DD/MM/YYYY', true).isValid()) {
+                if (!moment(details[0], 'DD/MM/YYYY', true).isValid()) {
                     logger.debug('Incorrect date format found- transaction skipped:', record);
                     console.log('Please note: transaction skipped due to error');
-                } else if (isNaN(parseFloat(details[4]))){
+                } else if (isNaN(parseFloat(details[4]))) {
                     logger.debug('Incorrect price format found- transaction skipped:', record);
                     console.log('Please note: transaction skipped due to error');
                 } else {
@@ -64,11 +65,11 @@ try {
                     let transAmount = parseFloat(details[4])
                     let newTransaction = new Transaction(transactionID, transDate, details[1], details[2], details[3], transAmount);
                     transactions.push(newTransaction);
-                    if (typeof accounts.find(element => element.Name === newTransaction.To) === "undefined"){
+                    if (typeof accounts.find(element => element.Name === newTransaction.To) === "undefined") {
                         let newAccount = new BankAccount(newTransaction.To, 0.00);
                         accounts.push(newAccount);
                     }
-                    if (typeof accounts.find(element => element.Name === newTransaction.From) === "undefined"){
+                    if (typeof accounts.find(element => element.Name === newTransaction.From) === "undefined") {
                         let newAccount = new BankAccount(newTransaction.From, 0.00);
                         accounts.push(newAccount);
                     }
@@ -77,6 +78,8 @@ try {
                 }
             }
         });
+    } else if (extension === 'xml'){
+        console.log(data);
     } else {
         console.log('Cannot find the file which you provided.')
     }
